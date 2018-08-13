@@ -2,7 +2,6 @@
 
 function task (katanumber) {
     let kTask = document.getElementById("kataTask")
-    let task1 = document.createElement("h5")
     let append = document.createTextNode(katanumber)
     let katanumber = ["1. Display an array from the cities in gotCitiesCSV."
     ,"2. Display a string separated by semi-colons instead of commas from gotCitiesCSV"
@@ -37,7 +36,7 @@ function task (katanumber) {
     , "31. Using shift, remove the first city from lotrCitiesArray"
     , "32. Using unshift, add back the city from lotrCitiesArray that was removed in #31 to the front of the array"];
     for (let i = 0; i<=katanumber.length; i++)) {
-        console.log(katanumber[i])
+        let task1 = document.createElement("div")
         task1.appendChild(append)
         kTask.appendChild(task1)
     }
