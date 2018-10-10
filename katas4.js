@@ -40,10 +40,10 @@ let kataDescription = ["1. Display an array from the cities in gotCitiesCSV",
 "32. Using unshift, add back the city from lotrCitiesArray that was removed in #31 to the front of the array"]
 
 function createKataContainer(kata) {
-    let resultNode = document.createTextNode(kata.result);
-    let description = document.createTextNode(kata.description)
     let container = document.createElement("div");
     let header = document.createElement("h3");
+    let resultNode = document.createTextNode(kata.result);
+    let description = document.createTextNode(kata.description)
     header.appendChild(description);
     container.appendChild(header);
     container.appendChild(resultNode);
@@ -68,21 +68,24 @@ const DMGsentence = {
 }
 createKataContainer(DMGsentence)
 
+
+
+// Katas!
 const kata1 = {
     description: kataDescription[0],
-    result: String(gotCitiesCSV)
+    result: JSON.stringify(gotCitiesCSV)
 }
 createKataContainer(kata1)
 
 const kata2 = {
     description: kataDescription[1],
-    result: String(bestThing.split(" "))
+    result: JSON.stringify(bestThing.split(" "))
 }
 createKataContainer(kata2);
 
 const kata3 = {
     description: kataDescription[2],
-    result: JSON.stringify(gotCitiesCSV)
+    result: gotCitiesCSV.split(",").join("; ")
 }
 createKataContainer(kata3);
 
@@ -169,16 +172,15 @@ const kata16 = {
 }
 createKataContainer(kata16);
 
-// console.log(bestThing.indexOf("only"))
 const kata17 = {
     description: kataDescription[16],
-    result: bestThing.slice(64, 68)
+    result: bestThing.indexOf("only")
 }
 createKataContainer(kata17);
 
 const kata18 = {
     description: kataDescription[17],
-    result: bestThing.substring(bestThing.lastIndexOf(" "))
+    result: bestThing.lastIndexOf(bestThing.split(" ").slice(-1))
 }
 createKataContainer(kata18);
 
